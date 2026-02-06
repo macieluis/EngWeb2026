@@ -1,7 +1,7 @@
 # Manifesto: TP1 - Análise e Visualização de Dataset de Oficina
 
 **Data:** 5 de Fevereiro de 2026
-**Autor:** [O Teu Nome / Número de Aluno]
+**Autor:** [Luís Maciel / a106896]
 **Unidade Curricular:** Engenharia Web
 
 ## Resumo
