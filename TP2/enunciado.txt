@@ -1,0 +1,8 @@
+criar um j-son server com o dataser das reparaçoes
+
+criar um server aplicacional para responder:
+1- '/reparaçoes' - Tabela HTML com os dados das reparaçoes
+2- '/intervencoes' - Tabela HTML com os diferentes tipos de intervençao,
+ sem repticoes e com o numero de vezes que foram feitas
+3- '/viaturas' - Tabela HTML com os dados dos tipos de viatura intervencionadas sem repetiçoes e
+ o numero de vezes qie cada modelo foi reparado
