@@ -8,5 +8,6 @@ Este repositório contém todos os trabalhos práticos e projetos desenvolvidos 
 - **Foto:** ![Foto](minhafoto.JPG)
 
 ### Índice de Trabalhos
-* [TPC1: Website de Gestão de Oficina](./TPC1/README.md)
-* [TPC2: Sistema de Gestão de Reparações](./TPC2/README.md)
+* [TPC1: Website de Gestão de Oficina](./TP1/README.md)
+* [TPC2: Sistema de Gestão de Reparações](./TP2/README.md)
+* [TPC3: Sistema de Gestão da Escola de Música](./TP3/README.md)
