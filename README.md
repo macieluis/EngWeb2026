@@ -12,3 +12,4 @@ Este repositório contém todos os trabalhos práticos e projetos desenvolvidos 
 * [TPC2: Sistema de Gestão de Reparações](./TP2/README.md)
 * [TPC3: Sistema de Gestão da Escola de Música](./TP3/README.md)
 * [TPC4: Sistema de Gestão de Exames Médicos Desportivos](./TP4/README.md)
+* [TPC5: Sistema de Gestão de Cinema](./TP5/README.md)
