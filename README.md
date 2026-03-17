@@ -13,3 +13,4 @@ Este repositório contém todos os trabalhos práticos e projetos desenvolvidos 
 * [TPC3: Sistema de Gestão da Escola de Música](./TP3/README.md)
 * [TPC4: Sistema de Gestão de Exames Médicos Desportivos](./TP4/README.md)
 * [TPC5: Sistema de Gestão de Cinema](./TP5/README.md)
+* [TPC6: App sobre Cinema Americano](./TP6/README.md)

@@ -1,0 +1,35 @@
+extends layout.pug
+
+block content
+  .w3-container
+    .w3-card-4.w3-margin-top
+      header.w3-container.w3-teal
+        h2= filme.title
+      .w3-container.w3-padding
+        table.w3-table-all
+          tr
+            td
+              b ID
+            td= filme._id
+          tr
+            td
+              b Título
+            td= filme.title
+          tr
+            td
+              b Ano
+            td= filme.year
+          tr
+            td
+              b Géneros
+            td
+              ul
+                each g in filme.genres
+                  li= g
+          tr
+            td
+              b Cast (#{filme.cast.length})
+            td
+              ul
+                each a in filme.cast
+                  li= a
