@@ -14,3 +14,4 @@ Este repositório contém todos os trabalhos práticos e projetos desenvolvidos 
 * [TPC4: Sistema de Gestão de Exames Médicos Desportivos](./TP4/README.md)
 * [TPC5: Sistema de Gestão de Cinema](./TP5/README.md)
 * [TPC6: App sobre Cinema Americano](./TP6/README.md)
+* [Aferição: Sistema de Gestão de Reparações Auto](./EW2026-Aferição/)
