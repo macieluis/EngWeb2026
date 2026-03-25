@@ -1,0 +1,83 @@
+========================================
+EW2026 - Aferição - Reparações
+========================================
+
+1. PERSISTÊNCIA DE DADOS
+-------------------------
+Os dados são persistidos em MongoDB.
+- Base de dados: autoRepair
+- Coleção: repairs
+
+2. SETUP DA BASE DE DADOS
+--------------------------
+a) Lançar MongoDB via Docker:
+   docker run -d -p 27017:27017 --name mongodb_server mongo
+
+b) Preparar o dataset:
+   cd ex1
+   node setup.js
+
+   Isto extrai o array de reparações do ficheiro JSON original (que tem um wrapper
+   {"reparacoes": [...]}) e corrige o campo nr_intervencoes para corresponder ao
+   número real de intervenções. O resultado é gravado em ex1/repairs.json.
+
+c) Importar para MongoDB:
+   mongoimport --db autoRepair --collection repairs --type json --jsonArray --file ex1/repairs.json
+
+d) Testar a importação:
+   mongosh autoRepair --eval "db.repairs.countDocuments()"
+
+3. QUERIES MONGODB
+-------------------
+As queries pedidas no exercício 1.2 encontram-se no ficheiro queries.txt na raiz do repositório.
+
+4. COMO EXECUTAR AS APLICAÇÕES (desenvolvimento local)
+-------------------------------------------------------
+Pré-requisito: MongoDB a correr em localhost:27017 com os dados importados.
+
+a) API de dados (Exercício 1 - porta 16025):
+   cd ex1
+   npm install
+   npm start
+
+b) Interface web (Exercício 2 - porta 16026):
+   cd ex2
+   npm install
+   npm start
+
+   A interface consome dados exclusivamente da API (ex1), nunca acede diretamente à BD.
+
+5. COMO EXECUTAR COM DOCKER
+-----------------------------
+a) Preparar o dataset (necessário antes do build):
+   cd ex1
+   node setup.js
+
+b) Lançar todos os serviços:
+   docker-compose up --build
+
+   Isto cria e orquestra 3 containers:
+   - mongodb_autorepair: MongoDB com dados pré-importados
+   - api_autorepair: API de dados na porta 16025
+   - interface_autorepair: Interface web na porta 16026
+
+c) Aceder:
+   - API: http://localhost:16025/repairs
+   - Interface: http://localhost:16026
+
+6. ROTAS DA API (porta 16025)
+------------------------------
+GET /repairs              - lista todas as reparações
+GET /repairs?ano=YYYY     - filtra por ano
+GET /repairs?marca=VRUM   - filtra por marca
+GET /repairs/:id          - detalhe de uma reparação
+GET /repairs/matrículas   - lista de matrículas únicas (ordenada)
+GET /repairs/interv       - lista de intervenções únicas (ordenada por código)
+POST /repairs             - cria nova reparação
+DELETE /repairs/:id       - elimina uma reparação
+
+7. ROTAS DA INTERFACE (porta 16026)
+-------------------------------------
+GET /         - página principal com tabela de todas as reparações
+GET /:id      - página de detalhe de uma reparação (id = ObjectId MongoDB)
+GET /:marca   - página de uma marca com modelos e lista de reparações

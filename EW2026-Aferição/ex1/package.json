@@ -1,0 +1,12 @@
+{
+  "name": "autorepair-api",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node myServer.js",
+    "setup": "node setup.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.2.4"
+  }
+}

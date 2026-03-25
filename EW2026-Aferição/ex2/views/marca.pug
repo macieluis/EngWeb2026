@@ -1,0 +1,33 @@
+extends layout.pug
+
+block content
+  .w3-container
+    .w3-card-4.w3-margin-top
+      header.w3-container.w3-teal
+        h2 Marca: #{marca}
+      .w3-container.w3-padding
+        h3 Modelos intervencionados
+        ul
+          each m in modelos
+            li= m
+
+        h3 Reparações (#{repairs.length})
+        table.w3-table-all.w3-margin-top
+          tr.w3-teal
+            th ID
+            th Data
+            th Nome
+            th Matrícula
+            th Marca
+            th Nr. Intervenções
+          each r in repairs
+            tr
+              td
+                a(href=`/${r._id}`)= r._id
+              td= r.data
+              td= r.nome
+              td= r.viatura.matricula
+              td= r.viatura.marca
+              td= r.nr_intervencoes
+        .w3-margin-top
+          a.w3-button.w3-teal(href='/') Voltar à página principal
